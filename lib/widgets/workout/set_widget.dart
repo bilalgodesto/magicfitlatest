@@ -156,7 +156,7 @@ class _SetWidgetState extends State<SetWidget> {
                       key: ValueKey('selectExercise${widget.setNumber}'),
                       underline: Container(),
                       isExpanded: true,
-                      dropdownColor: Colors.black,
+                      dropdownColor: Colors.white,
                       value: exerciseItem,
                       onChanged: (newValue) async {
 // //_selectedCountry = newVasetState((){
@@ -184,7 +184,7 @@ class _SetWidgetState extends State<SetWidget> {
                     label: 'Select Weight',
                     color: Colors.black,
                     child: DropdownButton(
-                      dropdownColor: Colors.black,
+                      dropdownColor: Colors.white,
                       underline: Container(),
                       isExpanded: true,
                       value: weightSelected,
@@ -212,7 +212,7 @@ class _SetWidgetState extends State<SetWidget> {
                     label: 'Select Repetition',
                     child: DropdownButton(
                       underline: Container(),
-                      dropdownColor: Colors.black,
+                      dropdownColor: Colors.white,
                       isExpanded: true,
                       value: repetitionSelected,
                       onChanged: (newValue) async {
