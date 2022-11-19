@@ -7,8 +7,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:magic_fit/main.dart';
 import 'package:magic_fit/viewmodel/work_out_provider.dart';
 import 'package:magic_fit/views/dashboard.dart';
 import 'package:provider/provider.dart';

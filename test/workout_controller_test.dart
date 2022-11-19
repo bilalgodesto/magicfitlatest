@@ -4,7 +4,6 @@ import 'package:magic_fit/services/workout_controller.dart';
 import 'package:magic_fit/viewmodel/login_controller.dart';
 import 'package:magic_fit/viewmodel/work_out_provider.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 
 class MockBuildContext extends Mock implements BuildContext {}
 

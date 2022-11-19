@@ -13,6 +13,51 @@
   all the test in this file `workout_controller_test.dart` will be run and output will be shown in terminal 
 
 
+# THIRD PARTY PACKAGES
+
+1. [provider](https://pub.dev/packages/provider)
+For the given task we needed a state management solution. Provider is one of the 
+reliable state management package and is recommended by flutter.
+
+2. [mockito](https://pub.dev/packages/mockito)
+is a framework mostly used for testing to mock apis and behaviour
+to avoid unnecessary external calls. Recommended by flutter.
+
+# ARCHITECHURE
+I am using mvvm architecture for this project. Where
+
+m stands for model. contains data classes
+v stands for view. contains UI components. widgets, forms etc
+vm stands for viewmodel. contains provider classes to get data from view.
+
+In the case of flutter mvvm architecture is considered best.
+It also include repository folder which contains
+services:  for internal operations
+apis: for external apis calls
+
+
+## Folder Structure
+
+```
+.magic_fit
+├── README.md
+├── integration_test
+├── test
+├── lib
+│   ├── constants
+│   ├── services
+│   ├── viewmodel
+│   ├── views
+│   ├── constants
+│   ├── widgets
+│   └── main.dart
+├── maps.iml
+├── pubspec.lock
+└── pubspec.yaml
+
+```
+
+
 # TYPES OF TEST [FLUTTER] 
 1) Unit test
 2) Widget test
