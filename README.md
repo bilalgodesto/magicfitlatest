@@ -13,7 +13,7 @@
   all the test in this file `workout_controller_test.dart` will be run and output will be shown in terminal 
 
 
-# THIRD PARTY PACKAGES
+## THIRD PARTY PACKAGES
 
 1. [provider](https://pub.dev/packages/provider)
 For the given task we needed a state management solution. Provider is one of the 
@@ -23,12 +23,14 @@ reliable state management package and is recommended by flutter.
 is a framework mostly used for testing to mock apis and behaviour
 to avoid unnecessary external calls. Recommended by flutter.
 
-# ARCHITECHURE
+## ARCHITECHURE
 I am using mvvm architecture for this project. Where
 
+```
 m stands for model. contains data classes
 v stands for view. contains UI components. widgets, forms etc
 vm stands for viewmodel. contains provider classes to get data from view.
+```
 
 In the case of flutter mvvm architecture is considered best.
 It also include repository folder which contains
@@ -36,7 +38,7 @@ services:  for internal operations
 apis: for external apis calls
 
 
-## Folder Structure
+### Folder Structure
 
 ```
 .magic_fit
@@ -58,14 +60,14 @@ apis: for external apis calls
 ```
 
 
-# TYPES OF TEST [FLUTTER] 
+### TYPES OF TEST [FLUTTER] 
 1) Unit test
 2) Widget test
 3) Integration test
 
 To perform these test we have created some files in this project folder
 
-# PROJECT STRUCTURE [UNIT] TESTING
+### PROJECT STRUCTURE [UNIT] TESTING
 
 - in lib/services folder we have define workout_controller.dart which contains a function saveWorkoutTest which will return
   add or update depends on parameters.
@@ -80,7 +82,7 @@ To perform these test we have created some files in this project folder
   `flutter test test/workout_controller_test.dart` to run the test the workout_controller_test.dart
 
   
-# PROJECT STRUCTURE [WIDGET] TESTING
+### PROJECT STRUCTURE [WIDGET] TESTING
  
 - in lib folder we have define dashboard.dart which contains two button  i.e add new and view listing
   we tap the add new button button and check if the add new workout form is open.
@@ -99,7 +101,7 @@ To perform these test we have created some files in this project folder
 
 
 
-# PROJECT STRUCTURE [INTEGRATION] TESTING
+### PROJECT STRUCTURE [INTEGRATION] TESTING
 
 - in lib folder we have define three files. all these files will be used in integration testing
 
@@ -130,7 +132,7 @@ To perform these test we have created some files in this project folder
 - All test functions are defined inside the callback function.
 
 
-# General points for testing in flutter 
+### General points for testing in flutter 
 
 - In any flutter project to enable testing add the following lines in pubsec.yaml 
   under dev_dependencies
