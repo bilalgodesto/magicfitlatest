@@ -37,12 +37,21 @@ It also include repository folder which contains
 services:  for internal operations
 apis: for external apis calls
 
+## Project flow
+First screen will show two buttons to add new workout and view listing.
+Add new workout screen has a form where we select number of sets
+and for each set we are able to select weight, repetition and exercise.
 
+View listing screen contains a list of of each workout. By clicking on any
+workout details we are able to edit the item.
+
+By clicking on Delete icon we are able to remove items from the list.
 ### Folder Structure
 
 ```
 .magic_fit
 ├── README.md
+├── assets
 ├── integration_test
 ├── test
 ├── lib
@@ -53,7 +62,6 @@ apis: for external apis calls
 │   ├── constants
 │   ├── widgets
 │   └── main.dart
-├── maps.iml
 ├── pubspec.lock
 └── pubspec.yaml
 

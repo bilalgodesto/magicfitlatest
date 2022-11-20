@@ -9,105 +9,104 @@ class WorkutListItem extends StatelessWidget {
   final WorkoutItem item;
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.only(
-        top: 40,
-      ),
-      elevation: 2,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30.0),
-      ),
-      child: Container(
-        width: MediaQuery.of(context).size.width * 0.95,
-        decoration: BoxDecoration(
-          color: Colors.white,
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+          return WorkOutScreen(
+            workoutItem: item,
+          );
+        }));
+      },
+      child: Card(
+        margin: const EdgeInsets.only(
+          top: 40,
+        ),
+        elevation: 2,
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-                  child: Row(
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.95,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.calendar_month,
+                          color: Color.fromARGB(255, 0, 164, 68),
+                          size: 24,
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          '${item.dateTime.day}-${item.dateTime.month}-${item.dateTime.year} ',
+                          textAlign: TextAlign.left,
+                          style: const TextStyle(
+                              fontSize: 14,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      const Icon(
-                        Icons.calendar_month,
-                        color: Color.fromARGB(255, 0, 164, 68),
-                        size: 24,
-                      ),
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        '${item.dateTime.day}-${item.dateTime.month}-${item.dateTime.year} ',
-                        textAlign: TextAlign.left,
-                        style: const TextStyle(
-                            fontSize: 14,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold),
+                      IconButton(
+                        onPressed: () {
+                          Provider.of<WorkoutProvider>(context, listen: false)
+                              .deleteItem(item.id);
+                        },
+                        icon: const Icon(
+                          Icons.delete,
+                          size: 34,
+                          color: Colors.red,
+                        ),
                       ),
                     ],
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        Provider.of<WorkoutProvider>(context, listen: false)
-                            .deleteItem(item.id);
-                      },
-                      icon: const Icon(
-                        Icons.delete,
-                        size: 34,
-                        color: Colors.red,
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-              child: Row(
-                children: [
-                  const Icon(
-                    Icons.lock_clock,
-                    color: Color(0xFFA08844),
-                    size: 24,
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  Text(
-                    ' ${item.dateTime.hour}:${item.dateTime.minute} ',
-                    textAlign: TextAlign.left,
-                    style: const TextStyle(
-                        fontSize: 14,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold),
-                  ),
+                  )
                 ],
               ),
-            ),
-            Column(
-              children: List.generate(item.sets.length, (index) {
-                return GestureDetector(
-                  onTap: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return WorkOutScreen(
-                        workoutItem: item,
-                      );
-                    }));
-                  },
-                  child: Container(
+              Padding(
+                padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                child: Row(
+                  children: [
+                    const Icon(
+                      Icons.lock_clock,
+                      color: Color(0xFFA08844),
+                      size: 24,
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      ' ${item.dateTime.hour}:${item.dateTime.minute} ',
+                      textAlign: TextAlign.left,
+                      style: const TextStyle(
+                          fontSize: 14,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Column(
+                children: List.generate(item.sets.length, (index) {
+                  return Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                         color: Colors.white,
@@ -185,11 +184,11 @@ class WorkutListItem extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ),
-                );
-              }),
-            ),
-          ],
+                  );
+                }),
+              ),
+            ],
+          ),
         ),
       ),
     );
